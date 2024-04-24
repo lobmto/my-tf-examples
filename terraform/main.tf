@@ -12,3 +12,7 @@ provider "docker" {}
 module "docker_with_count" {
   source = "./modules/docker_with_count"
 }
+
+module "docker_with_for_each" {
+  source = "./modules/docker_with_for_each"
+}
