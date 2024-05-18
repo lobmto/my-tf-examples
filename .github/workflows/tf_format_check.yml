@@ -1,0 +1,21 @@
+name: 'Terraform Format Check'
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+env:
+  tf_actions_working_dir: terraform
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ env.tf_actions_working_dir }}
+    permissions:
+      pull-requests: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: hashicorp/setup-terraform@v3
+
+    - name: Terraform fmt
+      id: fmt
+      run: terraform fmt -check
