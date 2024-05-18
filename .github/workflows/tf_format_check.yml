@@ -1,11 +1,11 @@
-name: 'Auto Assign'
+name: 'Terraform Format Check'
 on:
   pull_request:
     types: [opened, ready_for_review]
 env:
   tf_actions_working_dir: terraform
 jobs:
-  add-assignees:
+  format-check:
     runs-on: ubuntu-latest
     defaults:
       run:
