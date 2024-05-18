@@ -24,3 +24,7 @@ output "docker_with_count_container_id_list" {
 output "docker_with_for_each_container_id_map" {
   value = module.docker_with_for_each.container_id_map
 }
+
+variable "image_name" {
+  type = string
+}
